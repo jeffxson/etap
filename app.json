@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "GeofencingAppExpo",
+    "slug": "GeofencingAppExpo",
+    "platforms": ["ios", "android"],
+    "version": "1.0.0",
+    "notification": {
+      "iosDisplayInForeground": true
+    },
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "happy",
+      "buildNumber": "1.0.0",
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "We need your location to show relevant information.",
+        "UIBackgroundModes": ["fetch"]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
