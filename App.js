@@ -127,7 +127,16 @@ export default function App() {
         region={region}
         onRegionChangeComplete={setRegion}
       >
-        {location && <Marker coordinate={location} />}
+        {location && (
+          <Marker
+            coordinate={{
+              latitude: location.latitude,
+              longitude: location.longitude,
+            }}
+            title="Your Location"
+            description="This is your current location"
+          />
+        )}
         <Circle
           center={geofence}
           radius={geofence.radius}
