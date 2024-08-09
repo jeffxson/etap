@@ -57,7 +57,7 @@ export default function App() {
 
   const getDistance = (point1, point2) => {
     const rad = (x) => (x * Math.PI) / 180;
-    const R = 6378137; // Earth’s mean radius in meters
+    const R = 6378137;
     const dLat = rad(point2.latitude - point1.latitude);
     const dLong = rad(point2.longitude - point1.longitude);
     const a =
@@ -68,7 +68,7 @@ export default function App() {
         Math.sin(dLong / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const distance = R * c;
-    return distance; // returns the distance in meters
+    return distance;
   };
 
   const triggerNotification = (message) => {
