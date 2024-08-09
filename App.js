@@ -7,14 +7,14 @@ import * as Notifications from "expo-notifications";
 export default function App() {
   const [location, setLocation] = useState(null);
   const [region, setRegion] = useState({
-    latitude: 6.438912,
-    longitude: 3.5618816,
+    latitude: 6.42609,
+    longitude: 3.42094,
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421,
   });
   const [geofence, setGeofence] = useState({
-    latitude: 6.438912,
-    longitude: 3.5618816,
+    latitude: 6.42609,
+    longitude: 3.42094,
     radius: 500,
   });
   const [latitude, setLatitude] = useState("");
