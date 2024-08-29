@@ -3,6 +3,7 @@ import { StyleSheet, View, Alert, TextInput, Button } from "react-native";
 import MapView, { Marker, Circle } from "react-native-maps";
 import * as Location from "expo-location";
 import * as Notifications from "expo-notifications";
+import { registerForPushNotificationsAsync } from "./components/notificationRequest";
 
 export default function App() {
   const [location, setLocation] = useState(null);
@@ -15,16 +16,21 @@ export default function App() {
   const [geofence, setGeofence] = useState({
     latitude: 6.42609,
     longitude: 3.42094,
-    radius: 500,
+    radius: 1200,
   });
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
+  useEffect(() => {
+    registerForPushNotificationsAsync();
+  }, []);
 
   useEffect(() => {
     (async () => {
       let { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== "granted") {
-        Alert.alert("Permission to access location was denied");
+        Alert.alert(
+          "Permission to access location was denied Please go to setting and allow location"
+        );
         return;
       }
 
